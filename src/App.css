@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+:root {
+  --timer-color: #f7fca0;
+  --main-color: #bff8e2;
+  --secondary-color: #438d83;
+  --background-color: #407294;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.5;
 }
 
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: var(--background-color);
+  color: var(--main-color);
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  color: var(--main-color);
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.timer {
+  color: var(--timer-color);
+  font-size: 150px;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  outline: none;
+  border: none;
+  font-size: 24px;
+  background: var(--main-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.buttons button:hover {
+  border-radius: 10px;
+  background: var(--timer-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.buttons button:not(:last-child) {
+  margin-right: 10px;
+}
+
+@media (max-width: 780px) {
+  h2 {
+    font-size: 22px;
   }
-  to {
-    transform: rotate(360deg);
+  .timer {
+    font-size: 80px;
+  }
+  .buttons button {
+    font-size: 18px;
   }
 }
